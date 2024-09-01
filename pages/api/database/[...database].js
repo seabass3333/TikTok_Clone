@@ -9,7 +9,7 @@ const secret = process.env.JWT_SECRET;
 let collection = null;
 
 let main = async () => {
-  let url = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@videos.xpaadu5.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`;
+  let url = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@videos.xpaadu5.mongodb.net/${process.env.DATABASE}?authSource=admin`;
   if (!process.env.USER || !process.env.PASSWORD || !process.env.DATABASE) {
     url = "mongodb://localhost:27017";
     const client = new MongoClient(url);
